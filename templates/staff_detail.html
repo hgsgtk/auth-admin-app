@@ -1,0 +1,19 @@
+<h3>Staff</h3>
+
+<div class="btn-group">
+    <form action="/staffs/{{.ID}}:delete" method="post">
+        <a href="/staffs/{{.ID}}/edit" class="btn btn-primary btn-sm">
+            <i class="glyphicon glyphicon-edit"></i>
+            <span>Edit staff</span>
+        </a>
+        <button class="btn btn-danger btn-sm">
+            <i class="glyphicon glyphicon-trash"></i>
+            <span>Delete staff</span>
+        </button>
+    </form>
+</div>
+
+<div class="media">
+    <span>{{.Name}}</span>
+    <span>{{.Role}}</span>
+</div>

@@ -1,0 +1,13 @@
+<h3>staffs</h3>
+
+<form method="post" enctype="multipart/form-data" action="/staffs{{if .}}/{{.ID}}{{end}}">
+    <div class="form-group">
+        <label for="name">name</label>
+        <input class="form-control" name="name" id="name" value="{{.Name}}">
+    </div>
+    <div class="form-group">
+        <label for="name">role</label>
+        <input class="form-control" name="role" id="role" value="{{.Role}}">
+    </div>
+    <button class="btn btn-success">Save</button>
+</form>

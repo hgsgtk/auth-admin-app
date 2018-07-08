@@ -1,0 +1,10 @@
+<h3>staffs</h3>
+<a href="/staffs/add" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-plus"></i>
+    <span>Add staff</span>
+</a>
+
+{{range .}}
+<div class="media">
+    <span><a href="/staffs/{{.ID}}">{{.Name}}</a></span>
+</div>
+{{end}}

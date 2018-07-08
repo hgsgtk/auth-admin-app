@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: web
+    links:
+      - mysql
+      - redis
+    restart: always
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    ports:
+      - "3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=admin
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+
+  redis:
+    image: redis:4
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - /tmp
+    restart: always
+    command: redis-server --requirepass password --appendonly yes
