@@ -32,6 +32,10 @@ $ docker-compose up -d
 ```
 
 ## 参考
+### 類似
+- https://github.com/qor/auth
+    - ロール等を認識して認可するミドルウェアの仕組みはこいつを参考にする
+
 ### Docker
 - https://blog.golang.org/docker
 - https://github.com/hiromaily/go-gin-wrapper/blob/master/docker-compose.yml
