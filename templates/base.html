@@ -12,23 +12,28 @@
         <div class="navbar-header">
             <div class="navbar-brand">Sample admin application</div>
         </div>
-    </div>
 
-    <ul class="nav navbar-nav">
-        <li><a href="/">TOP</a></li>
-    </ul>
-
-    {{if .AuthEnabled}}
-        {{if .Profile}}
-        <form method="post" action="{{.LogoutURL}}" class="navbar-form navbar-right">
-            <button class="btn btn-default">Log out</button>
-        </form>
-        {{else}}
-        <div class="navbar-text navbar-right">
-            <a href="{{.LoginURL}}">Log in</a>
-        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">TOP</a></li>
+        </ul>
+        {{if .AuthEnabled}}
+            {{if .Profile}}
+            <form method="post" action="{{.LogoutURL}}" class="navbar-form navbar-right">
+                <button class="btn btn-default">Log out</button>
+            </form>
+            <div class="navbar-text navbar-right">
+                {{if .Profile.ImageURL}}
+                    <img class="img-circle" width="24" src="{{.Profile.ImageURL}}">
+                {{end}}
+                <span>{{.Profile.DisplayName}}</span>
+            </div>
+            {{else}}
+            <div class="navbar-text navbar-right">
+                <a href="{{.LoginURL}}">Log in</a>
+            </div>
+            {{end}}
         {{end}}
-    {{end}}
+    </div>
 </div>
 <div class="container">
     {{template "body" .Data}}
